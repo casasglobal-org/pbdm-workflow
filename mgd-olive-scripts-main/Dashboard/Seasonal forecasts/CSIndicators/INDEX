@@ -1,0 +1,45 @@
+AbsToProbs              Transform ensemble forecast into probabilities
+AccumulationExceedingThreshold
+                        Accumulation of a variable when Exceeding (not
+                        exceeding) a Threshold
+CST_AbsToProbs          Transform ensemble forecast into probabilities
+CST_AccumulationExceedingThreshold
+                        Accumulation of a variable when Exceeding (not
+                        exceeding) a Threshold
+CST_MergeRefToExp       Merge a Reference To Experiments
+CST_PeriodAccumulation
+                        Period Accumulation on 's2dv_cube' objects
+CST_PeriodMean          Period Mean on 's2dv_cube' objects
+CST_QThreshold          Transform an absolute threshold into
+                        probabilities
+CST_SelectPeriodOnData
+                        Select a period on Data on 's2dv_cube' objects
+CST_Threshold           Absolute value of a relative threshold
+                        (percentile)
+CST_TotalSpellTimeExceedingThreshold
+                        Total Spell Time Exceeding Threshold
+CST_TotalTimeExceedingThreshold
+                        Total Time of a variable Exceeding (not
+                        exceeding) a Threshold
+CST_WindCapacityFactor
+                        Wind capacity factor on s2dv_cube objects
+CST_WindPowerDensity    Wind power density on s2dv_cube objects
+MergeRefToExp           Merge a Reference To Experiments
+PeriodAccumulation      Period Accumulation on multidimensional array
+                        objects
+PeriodMean              Period Mean on multidimensional array objects
+QThreshold              Transform an absolute threshold into
+                        probabilities
+SelectPeriodOnData      Select a period on Data on multidimensional
+                        array objects
+SelectPeriodOnDates     Select a period on Dates
+Threshold               Absolute value of a relative threshold
+                        (percentile)
+TotalSpellTimeExceedingThreshold
+                        Total Spell Time Exceeding Threshold
+TotalTimeExceedingThreshold
+                        Total Time of a variable Exceeding (not
+                        exceeding) a Threshold
+WindCapacityFactor      Wind capacity factor
+WindPowerDensity        Wind power density on multidimensional array
+                        objects
