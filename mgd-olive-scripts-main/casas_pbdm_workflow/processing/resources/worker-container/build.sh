@@ -2,21 +2,8 @@ AWS_ACCOUNT_ID=`aws sts get-caller-identity --query Account --output text`
 ECR="dev-pbdm-wf-worker-image"
 REGION="eu-west-1"
 
-echo "This image will be builded and pushed in $AWS_ACCOUNT_ID.dkr.ecr.$REGION.amazonaws.com/$ECR"
-echo "Press 'y' to proceed, any other key to cancel."
-read A
-if [ $A = "y" ]; then
-    echo "Loggin into ECR..."
-    aws ecr get-login --no-include-email >> err.txt
-    `aws ecr get-login --no-include-email` >> err.txt
-    rm err.txt
-    echo "Building image \"$ECR\" ..."
-    docker build --no-cache -t $AWS_ACCOUNT_ID.dkr.ecr.$REGION.amazonaws.com/$ECR --platform=linux/amd64 .
-    echo "Pushing image..."
-    docker push $AWS_ACCOUNT_ID.dkr.ecr.$REGION.amazonaws.com/$ECR
+aws ecr get-login-password --region ${REGION} | docker login --username AWS --password-stdin ${AWS_ACCOUNT_ID}.dkr.ecr.${REGION}.amazonaws.com
 
-    $(aws ecr get-login --no-include-email --region $REGION)
-
-else
-    echo "Canceled."
-fi
+docker build --no-cache  --provenance=false --platform=linux/amd64 -t pbdm-worker .
+docker tag pbdm-worker ${AWS_ACCOUNT_ID}.dkr.ecr.${REGION}.amazonaws.com/${ECR}:latest
+docker push ${AWS_ACCOUNT_ID}.dkr.ecr.${REGION}.amazonaws.com/${ECR}:latest
